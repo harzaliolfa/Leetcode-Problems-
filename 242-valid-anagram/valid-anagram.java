@@ -11,8 +11,6 @@ class Solution {
             t_map.merge(c, 1, Integer::sum);
     
         }
-        System.out.println("s_map"+ s_map);
-        System.out.println("t_map"+ t_map);
 
         for(Map.Entry<Character,Integer> entry: s_map.entrySet()){
             if ( !t_map.containsKey(entry.getKey()) || !t_map.get(entry.getKey()).equals(entry.getValue())){
