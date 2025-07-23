@@ -1,7 +1,6 @@
 class Solution {
     public boolean isValid(String s) {
-        Map<Character, Integer> openPar = Map.of('(',1,'{',2,'[',3);
-        Map<Character, Integer> closePar = Map.of(')',1,'}',2,']',3);
+
         Stack<Character> stack = new Stack<Character>();
         if(s.length() == 1) return false;
         for(char c : s.toCharArray()){
@@ -10,14 +9,13 @@ class Solution {
             }
             else {
                 if(stack.isEmpty()) return false;
+                char top = stack.pop();
                     
-                if(openPar.get(stack.peek()) == closePar.get(c)){
-                    stack.pop();
+                if ((c == ')' && top != '(') ||
+                    (c == '}' && top != '{') ||
+                    (c == ']' && top != '[')) {
+                    return false; // Mismatch found
                 }
-                else {
-                    stack.push(c);
-                }
-            
             }
         }
         return stack.isEmpty();
