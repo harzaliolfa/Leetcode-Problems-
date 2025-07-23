@@ -1,11 +1,11 @@
 class Solution {
     public boolean isValid(String s) {
-Map<String, Integer> openPar = Map.of("(",1,"{",2,"[",3);
-        Map<String, Integer> closePar = Map.of(")",1,"}",2,"]",3);
-        Stack<String> stack = new Stack<String>();
+        Map<Character, Integer> openPar = Map.of('(',1,'{',2,'[',3);
+        Map<Character, Integer> closePar = Map.of(')',1,'}',2,']',3);
+        Stack<Character> stack = new Stack<Character>();
         if(s.length() == 1) return false;
         for(int i =0; i< s.length(); i++){
-            String  c = String.valueOf(s.charAt(i));
+            Character  c = s.charAt(i);
             if(openPar.containsKey(c)){
                 stack.push(c);
             }
