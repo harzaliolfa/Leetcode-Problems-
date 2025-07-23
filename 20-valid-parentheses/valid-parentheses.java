@@ -10,15 +10,14 @@ class Solution {
             }
             else {
                 if(stack.isEmpty()) return false;
-                if(!stack.isEmpty()){
                     
-                    if(openPar.get(stack.peek()) == closePar.get(c)){
-                        stack.pop();
-                    }
-                    else {
-                        stack.push(c);
-                    }
+                if(openPar.get(stack.peek()) == closePar.get(c)){
+                    stack.pop();
                 }
+                else {
+                    stack.push(c);
+                }
+            
             }
         }
         return stack.isEmpty();
