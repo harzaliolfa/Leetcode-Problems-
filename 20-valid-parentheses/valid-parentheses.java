@@ -12,8 +12,8 @@ Map<String, Integer> openPar = Map.of("(",1,"{",2,"[",3);
             else {
                 if(stack.isEmpty() && closePar.containsKey(c)) return false;
                 if(!stack.isEmpty()){
-                    String lastElmnt = stack.peek();
-                    if(openPar.get(lastElmnt) == closePar.get(c)){
+                    
+                    if(openPar.get(stack.peek()) == closePar.get(c)){
                         stack.pop();
                     }
                     else {
